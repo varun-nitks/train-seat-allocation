@@ -128,12 +128,7 @@ func (r *InMemoryTicketRepository) ModifySeat(email, newSeat string) error {
 
 	ticket, exists := r.tickets[email]
 	if !exists {
-		// Allocate new seat if ticket not found
-		r.tickets[email] = &models.Ticket{
-			User: models.User{Email: email},
-			Seat: newSeat,
-		}
-		return nil
+		return errors.New("ticket not found")
 	}
 
 	ticket.Seat = newSeat

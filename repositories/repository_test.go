@@ -116,7 +116,7 @@ func TestModifySeat(t *testing.T) {
 		errMsg   string
 	}{
 		{"user1@example.com", "A2", "A1", "seat already allocated to another passenger"},
-		{"user3@example.com", "A3", "A3", ""},
+		{"user3@example.com", "A3", "A3", "ticket not found"},
 		{"user1@example.com", "A4", "A4", ""},
 	}
 
